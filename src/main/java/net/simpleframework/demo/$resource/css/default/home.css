@@ -1,0 +1,136 @@
+.HomePage table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+.HomePage td {
+	padding: 0;
+	vertical-align: top;
+}
+
+.HomePage .block {
+	overflow: hidden;
+}
+
+.HomePage .b11 {
+	width: 320px;
+	margin: 8px;
+	float: left;
+}
+
+.HomePage .b12 {
+	height: 300px;
+	width: 480px;
+	margin: 4px;
+	float: right;
+}
+
+.HomePage .b21,
+.HomePage .b22 {
+	width: 406px;
+}
+
+.HomePage .b21 {
+	margin: 8px 4px 4px 5px;
+	float: left;
+}
+
+.HomePage .b22 {
+	margin: 8px 5px 4px 4px;
+	float: right;
+}
+
+.HomePage .title1,
+.HomePage .title2 {
+	background-repeat: no-repeat;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #157;
+	text-shadow: 1px 1px 1px #aaa;
+	height: 28px;
+	line-height: 28px;
+}
+
+.HomePage .title1 {
+	border-bottom: 1px solid #aaa;
+	margin-bottom: 4px;
+	padding: 0 0 4px 38px;
+	background-position: 0 -3px;
+}
+
+.HomePage .title2 {
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	padding: 6px 0 6px 40px;
+	background-position: 5px 3px;
+}
+
+.HomePage .content2 {
+  height: 250px;
+	border: 1px solid #ccc;
+	margin-top: -1px;
+	padding: 6px;
+}
+
+.HomePage .title1.notices {
+	background-image: url("images/home_notices.png");
+}
+
+.HomePage .title2.zx {
+	background-image: url("images/home_zx.png");
+}
+
+.HomePage .title2.camera {
+	background-image: url("images/home_camera.png");
+}
+
+.HomePage .block2 {
+	background-color: #fafafa;
+	height: 1200px;
+	border-left: 1px solid #aaa;
+	padding-top: 10px;
+}
+
+.HomePage .block2 .link {
+	border: 1px solid #aaa;
+	margin: 0 10px 10px 10px;
+	height: 48px;
+	padding: 8px 8px 8px 80px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	-webkit-box-shadow: 1px 1px 5px #aaa;
+	-moz-box-shadow: 1px 1px 5px #aaa;
+	box-shadow: 1px 1px 5px #aaa;
+}
+
+.HomePage .block2 .link:hover {
+	border: 1px solid #6F4301;
+}
+
+.HomePage .block2 .link a {
+	color: #555;
+}
+
+.HomePage .block2 .link a:hover {
+	color: #880;
+	text-decoration: none;
+}
+
+.HomePage .block2 .link .t1 {
+	font-size: 14pt;
+	font-weight: bold;
+	text-shadow: 2px 2px 1px #999;	
+}
+
+.HomePage .block2 .link .t2 {
+	color: #999;
+}
+
+.HomePage .block2 .link.email {
+	background-image: url("images/home_mail.png");
+}
+
+.HomePage .block2 .link.oa {
+	background-image: url("images/home_oa.png");
+}

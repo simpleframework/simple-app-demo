@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../base.xsd"></xsd:include>
+	<xsd:element name="login">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="loginForward" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+				<xsd:element name="jsLoginCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="container" />
+			<xsd:attribute name="showAutoLogin" type="xsd:string" default="true" />
+			<xsd:attribute name="showResetAction" type="xsd:string" default="true" />
+			<xsd:attribute name="showGetPassword" type="xsd:string" default="true" />
+			<xsd:attribute name="registAction" type="xsd:string" />
+			<xsd:attribute name="actionAlign" type="ETextAlign" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

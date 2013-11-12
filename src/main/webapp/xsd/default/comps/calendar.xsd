@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="calendar">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="closeCallback" type="xsd:string" maxOccurs="1"
+					minOccurs="0" />
+			</xsd:sequence>
+			<xsd:attribute name="inputField" type="xsd:string" />
+			<xsd:attribute name="dateFormat" type="xsd:string" default="yyyy-MM-dd" />
+			<xsd:attribute name="showTime" type="xsd:string" default="false" />
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

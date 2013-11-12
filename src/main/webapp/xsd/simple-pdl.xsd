@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="simple-pdl">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="process-definition" maxOccurs="1" minOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="process-definition">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="startup-type" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:choice maxOccurs="1" minOccurs="1">
+							<xsd:element name="manual" type="manual-type" />
+							<xsd:element name="email">
+							</xsd:element>
+						</xsd:choice>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="nodes" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="variables" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="description" minOccurs="0" maxOccurs="1" type="xsd:string" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="node-attributes" />
+			<xsd:attribute name="packageName" type="xsd:string" use="optional" />
+			<xsd:attribute name="author" type="xsd:string" use="optional" />
+			<xsd:attribute name="version" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="\d+(\.\d+){2}"></xsd:pattern>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="instanceShared" type="xsd:boolean" />
+			<xsd:attribute name="formClass" type="xsd:string" use="optional" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="user-node">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:group ref="user-elements" />
+				<xsd:element name="participant-type">
+					<xsd:complexType>
+						<xsd:choice minOccurs="1" maxOccurs="1">
+							<xsd:element ref="role" />
+							<xsd:element ref="user" />
+						</xsd:choice>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:attributeGroup ref="node-attributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="start-node">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:group ref="node-elements" />
+			</xsd:choice>
+			<xsd:attributeGroup ref="node-attributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="end-node">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:group ref="node-elements" />
+			</xsd:choice>
+			<xsd:attributeGroup ref="node-attributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="transition">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:group ref="node-elements" />
+				<xsd:element ref="transition-type" />
+			</xsd:choice>
+			<xsd:attributeGroup ref="node-attributes" />
+			<xsd:attribute name="from" type="xsd:string" use="required" />
+			<xsd:attribute name="to" type="xsd:string" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="transition-type">
+		<xsd:complexType>
+			<xsd:choice minOccurs="1" maxOccurs="1">
+				<xsd:element name="conditional">
+					<xsd:complexType>
+						<xsd:attribute name="expression" type="xsd:string" />
+						<xsd:attribute name="manual" type="xsd:boolean" default="false" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="logic-conditional">
+					<xsd:complexType>
+						<xsd:attribute name="logic" type="transition-logic" use="required" />
+						<xsd:attribute name="transitionId" type="xsd:string" use="required" />
+						<xsd:attribute name="manual" type="xsd:boolean" default="false" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="interface">
+					<xsd:complexType>
+						<xsd:attribute name="handleClass" type="xsd:string" use="required" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:simpleType name="transition-logic">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="and" />
+			<xsd:enumeration value="not" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="nodes">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="start-node" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="end-node" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="user-node" minOccurs="0" maxOccurs="unbounded" />
+				<xsd:element ref="transition" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="user">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="participant-attributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="role">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="participant-attributes" />
+			<xsd:attribute name="manual" type="xsd:boolean" default="false" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="relative-role">
+	</xsd:element>
+
+	<xsd:element name="variable">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="node-attributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="variables">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="variable" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:group name="user-elements">
+		<xsd:choice>
+			<xsd:group ref="node-elements" minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="variables" minOccurs="0" maxOccurs="1" />
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:attributeGroup name="node-attributes">
+		<xsd:attribute name="id" use="required" />
+		<xsd:attribute name="text" use="optional" />
+	</xsd:attributeGroup>
+
+	<xsd:group name="node-elements">
+		<xsd:choice>
+			<xsd:element name="description" minOccurs="0" maxOccurs="1" type="xsd:string" />
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:attributeGroup name="participant-attributes">
+		<xsd:attribute name="participant" type="xsd:string" />
+	</xsd:attributeGroup>
+
+	<xsd:complexType name="manual-type">
+		<xsd:sequence>
+			<xsd:element name="participant-type">
+				<xsd:complexType>
+					<xsd:choice minOccurs="1" maxOccurs="1">
+						<xsd:element ref="role" />
+						<xsd:element ref="user" />
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

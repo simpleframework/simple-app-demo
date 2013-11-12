@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  <xsd:include schemaLocation="../base.xsd"></xsd:include>
+  <xsd:element name="tree">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:group ref="treeElement" />
+      </xsd:sequence>
+      <xsd:attributeGroup ref="treeAttri" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:attributeGroup name="treeAttri">
+    <xsd:attributeGroup ref="container" />
+    <xsd:attribute name="dynamicLoading" type="xsd:string"
+      default="false" />
+    <xsd:attribute name="contextMenu" type="xsd:string" />
+    <xsd:attribute name="lineStyle">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="none" />
+          <xsd:enumeration value="full" />
+          <xsd:enumeration value="line" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="checkboxes" type="xsd:string"
+      default="false" />
+    <xsd:attribute name="checkboxesThreeState" type="xsd:string"
+      default="false" />
+    <xsd:attribute name="cookies" type="xsd:string"
+      default="true" />
+  </xsd:attributeGroup>
+
+  <xsd:group name="treeElement">
+    <xsd:sequence>
+      <xsd:group ref="treeElement2" />
+      <xsd:element name="jsLoadedCallback" type="xsd:string"
+        minOccurs="0" maxOccurs="1" />
+      <xsd:element ref="treenode" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:group>
+
+  <xsd:group name="treeNodeElement">
+    <xsd:sequence>
+      <xsd:element name="text" type="xsd:string" minOccurs="0"
+        maxOccurs="1" />
+      <xsd:element name="tooltip" type="xsd:string"
+        minOccurs="0" maxOccurs="1" />
+      <xsd:group ref="treeElement2" />
+      <xsd:element ref="treenode" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:group>
+
+  <xsd:group name="treeElement2">
+    <xsd:sequence>
+      <xsd:element name="jsClickCallback" type="xsd:string"
+        minOccurs="0" maxOccurs="1" />
+      <xsd:element name="jsDblclickCallback" type="xsd:string"
+        minOccurs="0" maxOccurs="1" />
+      <xsd:element name="jsCheckCallback" type="xsd:string"
+        minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:group>
+
+  <xsd:element name="treenode">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:group ref="treeNodeElement" />
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" />
+      <xsd:attribute name="text" type="xsd:string" />
+      <xsd:attribute name="dynamicLoading" type="xsd:string"
+        default="false" />
+      <xsd:attribute name="contextMenu" type="xsd:string" />
+      <xsd:attribute name="image" type="xsd:string" />
+      <xsd:attribute name="imageClose" type="xsd:string" />
+      <xsd:attribute name="imageOpen" type="xsd:string" />
+      <xsd:attribute name="opened" type="xsd:string"
+        default="false" />
+      <xsd:attribute name="draggable" type="xsd:string"
+        default="false" />
+      <xsd:attribute name="acceptdrop" type="xsd:string"
+        default="false" />
+      <xsd:attribute name="checkbox" type="xsd:string"
+        default="true" />
+      <xsd:attribute name="check" type="xsd:string"
+        default="1" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

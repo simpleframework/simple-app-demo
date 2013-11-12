@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="tooltip">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tip" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="component" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="tip">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="content" type="xsd:string" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="jsTipCreate" type="xsd:string" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="hideOn" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:attribute name="tipElement" type="tip-element" />
+						<xsd:attribute name="event" type="EJavascriptEvent" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="hook" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:attribute name="target" type="tip-position" />
+						<xsd:attribute name="tip" type="tip-position" />
+						<xsd:attribute name="mouse" type="xsd:string" default="false" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:attribute name="selector" type="xsd:string" />
+			<xsd:attribute name="title" type="xsd:string" />
+			<xsd:attribute name="content" type="xsd:string" />
+			<xsd:attribute name="width" type="xsd:string" default="200" />
+			<xsd:attribute name="radius" type="xsd:string" default="6" />
+			<xsd:attribute name="ajaxRequest" type="xsd:string" />
+			<xsd:attribute name="fixed" type="xsd:string" default="false" />
+			<xsd:attribute name="delay" type="xsd:string" default="0.14" />
+			<xsd:attribute name="hideAfter" type="xsd:string" default="0" />
+			<xsd:attribute name="hideOthers" type="xsd:string" default="false" />
+			<xsd:attribute name="target" type="xsd:string" />
+			<xsd:attribute name="offsetX" type="xsd:string" default="0" />
+			<xsd:attribute name="offsetY" type="xsd:string" default="0" />
+			<xsd:attribute name="showOn" type="EJavascriptEvent" />
+			<xsd:attribute name="stem" type="tip-position" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:simpleType name="tip-element">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="target" />
+			<xsd:enumeration value="tip" />
+			<xsd:enumeration value="closeButton" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="tip-position">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="topLeft" />
+			<xsd:enumeration value="topMiddle" />
+			<xsd:enumeration value="topRight" />
+			<xsd:enumeration value="rightTop" />
+			<xsd:enumeration value="rightMiddle" />
+			<xsd:enumeration value="rightBottom" />
+			<xsd:enumeration value="bottomRight" />
+			<xsd:enumeration value="bottomMiddle" />
+			<xsd:enumeration value="bottomLeft" />
+			<xsd:enumeration value="leftBottom" />
+			<xsd:enumeration value="leftMiddle" />
+			<xsd:enumeration value="leftTop" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>	

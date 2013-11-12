@@ -1,0 +1,27 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  <xsd:include schemaLocation="../base.xsd"></xsd:include>
+  <xsd:element name="syntaxHighlighter">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="jsSelectedCallback" type="xsd:string"
+          minOccurs="0" maxOccurs="1" />
+      </xsd:sequence>
+      <xsd:attribute name="shTheme">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="shThemeDefault" />
+            <xsd:enumeration value="shThemeDjango" />
+            <xsd:enumeration value="shThemeEclipse" />
+            <xsd:enumeration value="shThemeEmacs" />
+            <xsd:enumeration value="shThemeFadeToGrey" />
+            <xsd:enumeration value="shThemeMDUltra" />
+            <xsd:enumeration value="shThemeMidnight" />
+            <xsd:enumeration value="shThemeRDark" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attributeGroup ref="component" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

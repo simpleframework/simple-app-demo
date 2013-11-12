@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="htmlEditor">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="htmlContent" type="xsd:string" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="jsLoadedCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+			</xsd:sequence>
+			<xsd:attribute name="toolbar">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Basic" />
+						<xsd:enumeration value="Full" />
+						<xsd:enumeration value="Simple" />
+						<xsd:enumeration value="News" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="textarea" type="xsd:string" />
+			<xsd:attribute name="toolbarCanCollapse" type="xsd:string" default="false" />
+			<xsd:attribute name="resizeEnabled" type="xsd:string" default="false" />
+			<xsd:attribute name="startupFocus" type="xsd:string" default="true" />
+			<xsd:attribute name="enterMode" type="heLineMode" />
+			<xsd:attribute name="shiftEnterMode" type="heLineMode" />
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:simpleType name="heLineMode">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="br" />
+			<xsd:enumeration value="p" />
+			<xsd:enumeration value="div" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

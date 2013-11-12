@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="imageSlide">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="imageitem" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="imageUrl" minOccurs="1" maxOccurs="1" type="xsd:string" />
+							<xsd:element name="title" minOccurs="1" maxOccurs="1" type="xsd:string" />
+							<xsd:element name="link" minOccurs="0" maxOccurs="1" type="xsd:string" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="container" />
+			<xsd:attribute name="titleHeight" type="xsd:string" default="35"></xsd:attribute>
+			<xsd:attribute name="titleOpacity" type="xsd:string" default="0.6"></xsd:attribute>
+			<xsd:attribute name="frequency" type="xsd:string" default="4"></xsd:attribute>
+			<xsd:attribute name="autoStart" type="xsd:string" default="true"></xsd:attribute>
+			<xsd:attribute name="showNextAction" type="xsd:string" default="true"></xsd:attribute>
+			<xsd:attribute name="showPreAction" type="xsd:string" default="true"></xsd:attribute>
+			<xsd:attribute name="start" type="xsd:string" default="0"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

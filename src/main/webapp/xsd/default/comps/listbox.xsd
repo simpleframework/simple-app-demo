@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="listbox">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="listboxEvent"></xsd:group>
+				<xsd:element name="item" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:group ref="listboxEvent"></xsd:group>
+						</xsd:sequence>
+						<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+						<xsd:attribute name="text" type="xsd:string" use="required"></xsd:attribute>
+						<xsd:attribute name="tip" type="xsd:string"></xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="container" />
+			<xsd:attribute name="checkbox" type="xsd:string" default="false"></xsd:attribute>
+			<xsd:attribute name="tooltip" type="xsd:string" default="true"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:group name="listboxEvent">
+		<xsd:sequence>
+			<xsd:element name="jsClickCallback" type="xsd:string" minOccurs="0"
+				maxOccurs="1"></xsd:element>
+			<xsd:element name="jsDblclickCallback" type="xsd:string" minOccurs="0"
+				maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

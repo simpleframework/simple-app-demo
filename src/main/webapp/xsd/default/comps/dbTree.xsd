@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:include schemaLocation="tree.xsd"></xsd:include>
+	<xsd:element name="dbTree">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="treeElement"></xsd:group>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="treeAttri" />
+			<xsd:attribute name="dataSource" type="xsd:string" use="optional"
+				default="defaultDatasource">
+			</xsd:attribute>
+			<xsd:attribute name="tableName" type="xsd:string" use="required"></xsd:attribute>
+			<xsd:attribute name="idName" type="xsd:string" use="required"></xsd:attribute>
+			<xsd:attribute name="parentIdName" type="xsd:string" use="required"></xsd:attribute>
+			<xsd:attribute name="textName" type="xsd:string" use="required"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

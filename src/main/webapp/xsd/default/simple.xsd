@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="./comps/ajaxRequest.xsd" />
+	<xsd:include schemaLocation="./comps/submit.xsd" />
+	<xsd:include schemaLocation="./comps/include.xsd" />
+	<xsd:include schemaLocation="./comps/validation.xsd" />
+	<xsd:include schemaLocation="./comps/window.xsd" />
+	<xsd:include schemaLocation="./comps/messageWindow.xsd" />
+	<xsd:include schemaLocation="./comps/tree.xsd" />
+	<xsd:include schemaLocation="./comps/folderTree.xsd" />
+	<xsd:include schemaLocation="./comps/dbTree.xsd" />
+	<xsd:include schemaLocation="./comps/calendar.xsd" />
+	<xsd:include schemaLocation="./comps/listbox.xsd" />
+	<xsd:include schemaLocation="./comps/menu.xsd" />
+	<xsd:include schemaLocation="./comps/dictionary.xsd" />
+	<xsd:include schemaLocation="./comps/pager.xsd" />
+	<xsd:include schemaLocation="./comps/tablePager.xsd" />
+	<xsd:include schemaLocation="./comps/groupTablePager.xsd" />
+	<xsd:include schemaLocation="./comps/tooltip.xsd" />
+	<xsd:include schemaLocation="./comps/tabs.xsd" />
+	<xsd:include schemaLocation="./comps/chart.xsd" />
+	<xsd:include schemaLocation="./comps/htmlEditor.xsd" />
+	<xsd:include schemaLocation="./comps/portal.xsd" />
+	<xsd:include schemaLocation="./comps/progressBar.xsd" />
+	<xsd:include schemaLocation="./comps/slider.xsd" />
+	<xsd:include schemaLocation="./comps/colorpalette.xsd" />
+	<xsd:include schemaLocation="./comps/swfupload.xsd" />
+	<xsd:include schemaLocation="./comps/imageSlide.xsd" />
+	<xsd:include schemaLocation="./comps/videoPlayer.xsd" />
+	<xsd:include schemaLocation="./comps/propEditor.xsd" />
+	<xsd:include schemaLocation="./comps/validateCode.xsd" />
+	<xsd:include schemaLocation="./comps/pwdstrength.xsd" />
+	<xsd:include schemaLocation="./comps/chosen.xsd" />
+	<xsd:include schemaLocation="./comps/syntaxHighlighter.xsd" />
+
+	<xsd:include schemaLocation="./comps/ext/category.xsd" />
+
+	<xsd:include schemaLocation="./comps/organization/login.xsd" />
+
+	<xsd:include schemaLocation="./comps/workflow/wf_modellist.xsd" />
+	<xsd:include schemaLocation="./comps/workflow/wf_processlist.xsd" />
+	<xsd:include schemaLocation="./comps/workflow/wf_activitylist.xsd" />
+	<xsd:include schemaLocation="./comps/workflow/wf_worklist.xsd" />
+	<xsd:include schemaLocation="./comps/workflow/wf_start_process.xsd" />
+	<xsd:include schemaLocation="./comps/workflow/wf_workitem_complete.xsd" />
+	<xsd:include schemaLocation="simple_ex.xsd" />
+	<xsd:element name="page">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="pageElements" />
+				<xsd:element name="components" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:choice minOccurs="0" maxOccurs="unbounded">
+							<xsd:element ref="ajaxRequest" />
+							<xsd:element ref="submit" />
+							<xsd:element ref="include" />
+							<xsd:element ref="validation" />
+							<xsd:element ref="window" />
+							<xsd:element ref="messageWindow" />
+							<xsd:element ref="tree" />
+							<xsd:element ref="folderTree" />
+							<xsd:element ref="dbTree" />
+							<xsd:element ref="calendar" />
+							<xsd:element ref="listbox" />
+							<xsd:element ref="menu" />
+							<xsd:element ref="dictionary" />
+							<xsd:element ref="pager" />
+							<xsd:element ref="tablePager" />
+							<xsd:element ref="groupTablePager" />
+							<xsd:element ref="tooltip" />
+							<xsd:element ref="tabs" />
+							<xsd:element ref="chart" />
+							<xsd:element ref="htmlEditor" />
+							<xsd:element ref="portal" />
+							<xsd:element ref="progressbar" />
+							<xsd:element ref="slider" />
+							<xsd:element ref="colorpalette" />
+							<xsd:element ref="swfupload" />
+							<xsd:element ref="imageSlide" />
+							<xsd:element ref="videoPlayer" />
+							<xsd:element ref="propEditor" />
+							<xsd:element ref="validateCode" />
+							<xsd:element ref="pwdstrength" />
+							<xsd:element ref="chosen" />
+							<xsd:element ref="syntaxHighlighter" />
+
+							<xsd:element ref="category" /> 
+
+							<xsd:element ref="login" maxOccurs="1" />
+
+							<xsd:element ref="wf_modellist" />
+							<xsd:element ref="wf_processlist" />
+							<xsd:element ref="wf_activitylist" />
+							<xsd:element ref="wf_worklist" />
+							<xsd:element ref="wf_start_process" />
+							<xsd:element ref="wf_workitem_complete" />
+
+							<xsd:group ref="componentsEx"></xsd:group>
+						</xsd:choice>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:group name="pageElements">
+		<xsd:sequence>
+			<xsd:element name="scriptEval" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="none" />
+						<xsd:enumeration value="single" />
+						<xsd:enumeration value="multiple" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="scriptInit" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="resourceProvider" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="importPage" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="unbounded">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="importJavascript" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="unbounded">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="importCSS" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="unbounded">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="title" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="favicon" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="handleClass" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="handleMethod" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="jsLoadedCallback" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="responseCharacterEncoding" type="xsd:string" minOccurs="0"
+				maxOccurs="1" default="utf-8" />
+			<xsd:element name="role" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

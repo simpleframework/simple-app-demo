@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="swfupload">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="jsCompleteCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation><![CDATA[
+<p>每个文件上传成功后，将触发此事件</p>
+<p>可用参数：file、json</p>													
+						]]></xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="fileSizeLimit" type="xsd:string" default="1MB" />
+			<xsd:attribute name="fileQueueLimit" type="xsd:string" default="5" />
+			<xsd:attribute name="fileTypes" type="xsd:string" default="*.*" />
+			<xsd:attribute name="fileTypesDesc" type="xsd:string" default="All Files" />
+			<xsd:attribute name="multiFileSelected" type="xsd:string" default="false" />
+			<xsd:attribute name="roleUpload" type="xsd:string" />
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

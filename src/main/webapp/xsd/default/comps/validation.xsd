@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="validation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="validator" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attribute name="triggerSelector" type="xsd:string" />
+			<xsd:attributeGroup ref="warnType" />
+			<xsd:attributeGroup ref="component" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="validator">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="message" minOccurs="0" maxOccurs="1" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="selector" type="xsd:string" use="required"></xsd:attribute>
+			<xsd:attribute name="method" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="required" />
+						<xsd:enumeration value="number" />
+						<xsd:enumeration value="digits" />
+						<xsd:enumeration value="alpha" />
+						<xsd:enumeration value="alphanum" />
+						<xsd:enumeration value="date" />
+						<xsd:enumeration value="email" />
+						<xsd:enumeration value="url" />
+						<xsd:enumeration value="min_value" />
+						<xsd:enumeration value="max_value" />
+						<xsd:enumeration value="min_length" />
+						<xsd:enumeration value="max_length" />
+						<xsd:enumeration value="int_range" />
+						<xsd:enumeration value="float_range" />
+						<xsd:enumeration value="length_range" />
+						<xsd:enumeration value="file" />
+						<xsd:enumeration value="chinese" />
+						<xsd:enumeration value="ip" />
+						<xsd:enumeration value="phone" />
+						<xsd:enumeration value="mobile_phone" />
+						<xsd:enumeration value="equals" />
+						<xsd:enumeration value="less_than" />
+						<xsd:enumeration value="great_than" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="message" type="xsd:string"></xsd:attribute>
+			<xsd:attribute name="args" type="xsd:string"></xsd:attribute>
+			<xsd:attributeGroup ref="warnType" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:attributeGroup name="warnType">
+		<xsd:attribute name="warnType">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="alert"></xsd:enumeration>
+					<xsd:enumeration value="insertAfter"></xsd:enumeration>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+</xsd:schema>
+

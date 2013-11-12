@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd" />
+	<xsd:include schemaLocation="tablePager.xsd" />
+
+	<xsd:element name="groupTablePager">
+		<xsd:complexType>
+			<xsd:group ref="tablePagerElements" />
+			<xsd:attributeGroup ref="tablePagerAttributes" />
+			<xsd:attribute name="groupColumn" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

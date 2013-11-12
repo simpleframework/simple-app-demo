@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  <xsd:include schemaLocation="../base.xsd"></xsd:include>
+  <xsd:element name="chart">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="grid" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:attribute name="color" type="xsd:string" />
+            <xsd:attribute name="backgroundColor" type="xsd:string" />
+            <xsd:attribute name="verticalLines" type="xsd:string"
+              default="true" />
+            <xsd:attribute name="horizontalLines" type="xsd:string"
+              default="true" />
+            <xsd:attribute name="outlineWidth" type="xsd:string"
+              default="1" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="xaxis" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:attributeGroup ref="chart_axis" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="yaxis" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:attributeGroup ref="chart_axis" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:choice minOccurs="0" maxOccurs="1">
+          <xsd:element name="lines">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="line" minOccurs="1"
+                  maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="data" minOccurs="1"
+                        maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:attribute name="x" type="xsd:string"
+                            use="required" />
+                          <xsd:attribute name="y" type="xsd:string"
+                            use="required" />
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attributeGroup ref="chart_data" />
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+              <xsd:attributeGroup ref="chart_graph" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="bars">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="bar" minOccurs="1"
+                  maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="data" minOccurs="1"
+                        maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:attribute name="catalog"
+                            type="xsd:string" use="required" />
+                          <xsd:attribute name="y" type="xsd:string"
+                            use="required" />
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attributeGroup ref="chart_data" />
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+              <xsd:attributeGroup ref="chart_graph" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="pie">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="slice" minOccurs="1"
+                  maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:attribute name="data" type="xsd:string"
+                      use="required" />
+                    <xsd:attributeGroup ref="chart_data" />
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="sizeRatio" type="xsd:string"
+                default="0.6" />
+              <xsd:attributeGroup ref="chart_graph" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:sequence>
+      <xsd:attribute name="title" type="xsd:string" />
+      <xsd:attribute name="subtitle" type="xsd:string" />
+      <xsd:attributeGroup ref="container" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:attributeGroup name="chart_data">
+    <xsd:attribute name="label" type="xsd:string" />
+    <xsd:attribute name="color" type="xsd:string" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="chart_graph">
+    <xsd:attribute name="lineWidth" type="xsd:string"
+      default="1" />
+    <xsd:attribute name="fill" type="xsd:string" default="false" />
+    <xsd:attribute name="fillColor" type="xsd:string" />
+    <xsd:attribute name="fillOpacity" type="xsd:string"
+      default="0.4" />
+    <xsd:attribute name="showPoints" type="xsd:string"
+      default="true" />
+    <xsd:attribute name="mouseTrack" type="xsd:string"
+      default="true" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="chart_axis">
+    <xsd:attribute name="title" type="xsd:string" />
+    <xsd:attribute name="showLabels" type="xsd:string"
+      default="true" />
+    <xsd:attribute name="min" type="xsd:string" default="0" />
+    <xsd:attribute name="max" type="xsd:string" default="100" />
+    <xsd:attribute name="noTicks" type="xsd:string"
+      default="6" />
+  </xsd:attributeGroup>
+</xsd:schema>

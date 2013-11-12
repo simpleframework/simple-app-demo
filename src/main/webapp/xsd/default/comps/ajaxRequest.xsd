@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="ajaxRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="handleScript" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+				<xsd:element name="jsCompleteCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation><![CDATA[
+<p>可选参数: </p>
+<ul>
+	<li>req<br>AjaxRequest组件的返回对象</li>
+	<li>responseText<br>提供req参数的一个常用属性req.responseText</li>
+	<li>json<br>Handle返回JsonForward的Map值</li>
+</ul>
+						]]></xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="urlForward" type="xsd:string" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="confirmMessage" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="component" />
+			<xsd:attribute name="handleMethod" type="xsd:string" />
+			<xsd:attribute name="encoding" type="xsd:string" />
+			<xsd:attribute name="updateContainerId" type="xsd:string" />
+			<xsd:attribute name="updateContainerCache" type="xsd:string" default="false" />
+			<xsd:attribute name="showLoading" type="xsd:string" default="true" />
+			<xsd:attribute name="loadingModal" type="xsd:string" default="false" />
+			<xsd:attribute name="throwException">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="window"></xsd:enumeration>
+						<xsd:enumeration value="alert"></xsd:enumeration>
+						<xsd:enumeration value="location"></xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="parallel" type="xsd:string" default="false" />
+			<xsd:attribute name="disabledTriggerAction" type="xsd:string" default="true" />
+			<xsd:attribute name="confirmMessage" type="xsd:string" />
+			<xsd:attribute name="role" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

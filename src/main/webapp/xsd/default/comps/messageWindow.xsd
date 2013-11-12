@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="window.xsd"></xsd:include>
+	<xsd:element name="messageWindow">
+		<xsd:complexType>
+			<xsd:group ref="windowGroup"></xsd:group>
+			<xsd:attribute name="frequency" type="xsd:string" default="30"></xsd:attribute>
+			<xsd:attribute name="closeDelay" type="xsd:string" default="0"></xsd:attribute>
+			<xsd:attributeGroup ref="windowAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

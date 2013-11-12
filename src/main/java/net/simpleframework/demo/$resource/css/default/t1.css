@@ -1,0 +1,18 @@
+.HeaderPageT1 .re .acts {
+  float: left;
+  margin: 5px 10px 0 0;
+}
+
+.HeaderPageT1 .re .user {
+  float: right;
+}
+
+.HeaderPageT1 .re .photo_icon {
+	width: 48px;
+	height: 48px;
+	border-color: #eee; 
+}
+
+.HeaderPageT1 .re a.link_menuicon .micon {
+  background-image: url("images/down.png");
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="colorpalette">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="changeCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1">
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="startMode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="h"></xsd:enumeration>
+						<xsd:enumeration value="s"></xsd:enumeration>
+						<xsd:enumeration value="v"></xsd:enumeration>
+						<xsd:enumeration value="r"></xsd:enumeration>
+						<xsd:enumeration value="g"></xsd:enumeration>
+						<xsd:enumeration value="b"></xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="startHex" type="xsd:string" default="CCCCCC"></xsd:attribute>
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../base.xsd"></xsd:include>
+	<xsd:element name="category">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="jsLoadedCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="container" />
+			<xsd:attribute name="draggable" type="xsd:string" default="true" />
+			<xsd:attribute name="showContextMenu" type="xsd:string" default="true" />
+			<xsd:attribute name="dynamicTree" type="xsd:string" default="false" />
+			<xsd:attribute name="cookies" type="xsd:string" default="true" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

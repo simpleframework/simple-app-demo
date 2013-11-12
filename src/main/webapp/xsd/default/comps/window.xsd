@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="window">
+		<xsd:complexType>
+			<xsd:group ref="windowGroup"></xsd:group>
+			<xsd:attributeGroup ref="windowAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:group name="windowGroup">
+		<xsd:sequence>
+			<xsd:element name="content" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="jsShownCallback" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="jsHiddenCallback" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:attributeGroup name="windowAttributes">
+		<xsd:attributeGroup ref="component" />
+		<xsd:attribute name="popup" type="xsd:string" default="false" />
+		<xsd:attribute name="contentRef" type="xsd:string" />
+		<xsd:attribute name="url" type="xsd:string" />
+		<xsd:attribute name="modal" type="xsd:string" default="true" />
+		<xsd:attribute name="title" type="xsd:string" />
+		<xsd:attribute name="contentStyle" type="xsd:string" />
+		<xsd:attribute name="top" type="xsd:string" default="0" />
+		<xsd:attribute name="left" type="xsd:string" default="0" />
+		<xsd:attribute name="width" type="xsd:string" default="400" />
+		<xsd:attribute name="height" type="xsd:string" default="300" />
+		<xsd:attribute name="minWidth" type="xsd:string" default="200" />
+		<xsd:attribute name="minHeight" type="xsd:string" default="100" />
+		<xsd:attribute name="maxWidth" type="xsd:string" default="0" />
+		<xsd:attribute name="maxHeight" type="xsd:string" default="0" />
+		<xsd:attribute name="destroyOnClose" type="xsd:string" default="true" />
+		<xsd:attribute name="resizable" type="xsd:string" default="true" />
+		<xsd:attribute name="draggable" type="xsd:string" default="true" />
+		<xsd:attribute name="minimize" type="xsd:string" default="true" />
+		<xsd:attribute name="maximize" type="xsd:string" default="true" />
+		<xsd:attribute name="showCenter" type="xsd:string" default="true" />
+		<xsd:attribute name="singleWindow" type="xsd:string" default="true" />
+	</xsd:attributeGroup>
+</xsd:schema>	

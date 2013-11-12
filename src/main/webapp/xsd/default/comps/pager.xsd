@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd" />
+	<xsd:include schemaLocation="role_utils.xsd" />
+	<xsd:element name="pager"> 
+		<xsd:complexType>
+			<xsd:group ref="pagerElements" />
+			<xsd:attributeGroup ref="pagerAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:attributeGroup name="pagerAttributes">
+		<xsd:attribute name="dataPath" type="xsd:string" />
+		<xsd:attribute name="title" type="xsd:string" />
+		<xsd:attribute name="pageItems" type="xsd:string" default="15" />
+		<xsd:attribute name="indexPages" type="xsd:string" default="9" />
+		<xsd:attribute name="pagerBarLayout">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="top" />
+					<xsd:enumeration value="bottom" />
+					<xsd:enumeration value="both" />
+					<xsd:enumeration value="none" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="noResultDesc" type="xsd:string" />
+		<xsd:attribute name="exportAction" type="xsd:string" />
+		<xsd:attribute name="showEditPageItems" type="xsd:string" default="true" />
+		<xsd:attribute name="pageNumberParameterName" type="xsd:string" default="pageNumber" />
+		<xsd:attribute name="pageItemsParameterName" type="xsd:string" default="pageItems" />
+		<xsd:attribute name="showLoading" type="xsd:string" default="true" />
+    <xsd:attribute name="loadingModal" type="xsd:string" default="false" />
+      
+    <xsd:attribute name="catalogId" type="xsd:string" />
+    <xsd:attribute name="assertCatalogNull" type="xsd:string" default="true" />
+    <xsd:attributeGroup ref="role_view" />
+    <xsd:attributeGroup ref="role_edit" />
+		<xsd:attributeGroup ref="container" />
+	</xsd:attributeGroup>
+
+	<xsd:group name="pagerElements">
+		<xsd:sequence>
+			<xsd:element name="jsLoadedCallback" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>	

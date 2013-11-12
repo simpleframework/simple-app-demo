@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:include schemaLocation="tree.xsd"></xsd:include>
+	<xsd:element name="propEditor">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="jsLoadedCallback" minOccurs="0" maxOccurs="1" type="xsd:string" />
+				<xsd:element name="field" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="description" minOccurs="0" maxOccurs="1" type="xsd:string" />
+							<xsd:element name="component" minOccurs="1" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="defaultValue" minOccurs="0" maxOccurs="1"
+											type="xsd:string" />
+										<xsd:element name="event" minOccurs="0" maxOccurs="unbounded">
+											<xsd:complexType mixed="true">
+												<xsd:attribute name="name" type="EJavascriptEvent" use="required">
+												</xsd:attribute>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+									<xsd:attribute name="type">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:enumeration value="text" />
+												<xsd:enumeration value="textButton" />
+												<xsd:enumeration value="hidden" />
+												<xsd:enumeration value="checkbox" />
+												<xsd:enumeration value="password" />
+												<xsd:enumeration value="file" />
+												<xsd:enumeration value="textarea" />
+												<xsd:enumeration value="button" />
+												<xsd:enumeration value="select" />
+												<xsd:enumeration value="div" />
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:attribute>
+									<xsd:attribute name="style" type="xsd:string"></xsd:attribute>
+									<xsd:attribute name="attributes" type="xsd:string">
+									</xsd:attribute>
+									<xsd:attribute name="defaultValue" type="xsd:string">
+									</xsd:attribute>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="label" type="xsd:string"></xsd:attribute>
+						<xsd:attribute name="labelStyle" type="xsd:string"></xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="title" type="xsd:string"></xsd:attribute>
+			<xsd:attribute name="titleToggle" type="xsd:string" default="true"></xsd:attribute>
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

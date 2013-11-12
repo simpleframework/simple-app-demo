@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message-settings>
+  <mail>
+    <!-- 定义邮件发送server (演示程序,请不要恶意修改密码) -->
+    <smtp name="default">
+      <property name="host">smtp.126.com</property>
+      <property name="port">25</property>
+      <property name="ssl">false</property>
+      <property name="from">simpleframework&lt;simpleframework@126.com&gt;</property>
+      <property name="username">simpleframework</property>
+      <property name="password">simple</property>
+    </smtp>
+  </mail>
+<notice-message>
+    <category name="1337998358">
+      <property name="sendto-normal">true</property>
+      <property name="sendto-email">true</property>
+      <property name="sendto-mobile">false</property>
+      <property name="topic">帐号密码更改确认</property>
+      <property name="content"><![CDATA[您的密码已更改成功！你设置的新密码为：“${password}”。为了安全，建议您立即删除此条消息！]]></property>
+    </category>
+  </notice-message>
+</message-settings>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:include schemaLocation="tree.xsd"></xsd:include>
+	<xsd:element name="folderTree">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="treeElement" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="treeAttri" />
+			<xsd:attribute name="rootFolderPath" type="xsd:string" use="required" />
+			<xsd:attribute name="showRoot" type="xsd:string" default="true" />
+			<xsd:attribute name="showFile" type="xsd:string" default="false" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

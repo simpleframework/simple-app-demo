@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:include schemaLocation="window.xsd"></xsd:include>
+	<xsd:element name="dictionary">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice minOccurs="1" maxOccurs="1">
+					<xsd:element name="list">
+						<xsd:complexType>
+							<xsd:attribute name="ref" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="tree">
+						<xsd:complexType>
+							<xsd:attribute name="ref" type="xsd:string" use="required" />
+							<xsd:attribute name="updateImmediately" type="xsd:string" default="true" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="color">
+						<xsd:complexType>
+							<xsd:attribute name="ref" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="font" />
+					<xsd:element name="smiley" />
+				</xsd:choice>
+				<xsd:group ref="dictionaryElements"></xsd:group>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="dictionaryAttributes" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:attributeGroup name="dictionaryAttributes">
+		<xsd:attributeGroup ref="windowAttributes" />
+		<xsd:attribute name="bindingId" type="xsd:string" />
+		<xsd:attribute name="bindingText" type="xsd:string" />
+		<xsd:attribute name="clearAction" type="xsd:string" />
+		<xsd:attribute name="refreshAction" type="xsd:string" />
+		<xsd:attribute name="showHelpTooltip" type="xsd:string" default="true" />
+	</xsd:attributeGroup>
+
+	<xsd:group name="dictionaryElements">
+		<xsd:sequence>
+			<xsd:element name="jsSelectCallback" type="xsd:string" minOccurs="0"
+				maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[
+<p>参数列表</p>
+<p>selects<br>
+返回字典所选择的对象，数组类型。</p>
+<p>选择对象属性</p>
+<ul>
+	<li>id<br>选择节点的id</li>
+	<li>text<br>选择节点的显示文本</li>
+	<li>扩展属性</li>
+</ul>				
+					]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="clearAction" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="refreshAction" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:group ref="windowGroup" />
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

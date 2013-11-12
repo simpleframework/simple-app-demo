@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="slider">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="jsChangeCallback" type="xsd:string" minOccurs="0"
+					maxOccurs="1">
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="xminValue" type="xsd:string" default="0"></xsd:attribute>
+			<xsd:attribute name="xmaxValue" type="xsd:string" default="100"></xsd:attribute>
+			<xsd:attribute name="yminValue" type="xsd:string" default="0"></xsd:attribute>
+			<xsd:attribute name="ymaxValue" type="xsd:string" default="100"></xsd:attribute>
+			<xsd:attribute name="arrowImage" type="xsd:string"></xsd:attribute>
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

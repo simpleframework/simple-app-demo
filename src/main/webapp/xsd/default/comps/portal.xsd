@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../base.xsd"></xsd:include>
+	<xsd:element name="portal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="column" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="pagelet" minOccurs="0" maxOccurs="unbounded" />
+						</xsd:sequence>
+						<xsd:attribute name="width" type="xsd:string" default="25%" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="draggable" type="xsd:string" default="false" />
+			<xsd:attribute name="showMenu" type="xsd:string" default="false" />
+      <xsd:attribute name="autoPagelet" type="xsd:string" default="rss" />
+			<xsd:attribute name="roleManager" type="xsd:string" />
+			<xsd:attributeGroup ref="container" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="pagelet">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="title" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="description" type="xsd:string" minOccurs="0"
+								maxOccurs="1">
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="value" type="xsd:string"></xsd:attribute>
+						<xsd:attribute name="link" type="xsd:string"></xsd:attribute>
+						<xsd:attribute name="icon" type="xsd:string"></xsd:attribute>
+						<xsd:attribute name="fontStyle" type="xsd:string"></xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="options" minOccurs="0" maxOccurs="1" type="xsd:string">
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="module" type="xsd:string"></xsd:attribute>
+			<xsd:attribute name="align" type="ETextAlign"></xsd:attribute>
+			<xsd:attribute name="height" type="xsd:string"></xsd:attribute>
+			<xsd:attribute name="fontStyle" type="xsd:string"></xsd:attribute>
+			<xsd:attribute name="sync" type="xsd:string" default="false"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
