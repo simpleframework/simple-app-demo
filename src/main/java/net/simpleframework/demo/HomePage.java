@@ -37,7 +37,7 @@ public class HomePage extends HomeTemplatePage {
 		// if (category != null) {
 		final NewsPageletCreator creator = newsContext.getPageletCreator();
 		final INewsService nService = newsContext.getNewsService();
-		return creator.create(nService.queryNews("集团要闻"));
+		return creator.create(nService.queryContentBeans("集团要闻"));
 		// }
 		// }
 		// return super.toPageletHTML(pp, row, col);
