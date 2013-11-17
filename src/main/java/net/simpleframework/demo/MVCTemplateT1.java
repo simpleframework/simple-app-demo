@@ -7,6 +7,7 @@ import java.util.Map;
 
 import net.simpleframework.app.template.AbstractHeaderPage;
 import net.simpleframework.app.template.SFTemplateT1;
+import net.simpleframework.common.web.html.HtmlConst;
 import net.simpleframework.ctx.ModuleContextFactory;
 import net.simpleframework.module.favorite.web.IFavoriteWebContext;
 import net.simpleframework.module.msg.web.IMessageWebContext;
@@ -64,9 +65,9 @@ public class MVCTemplateT1 extends SFTemplateT1 {
 			sb.append("</div>");
 			sb.append("<div class='user'>").append(page.str_Photo(pp)).append("</div>");
 			sb.append(BlockElement.CLEAR);
-			sb.append(TAG_SCRIPT_START);
+			sb.append(HtmlConst.TAG_SCRIPT_START);
 			sb.append(AbstractHeaderPage.js_shake("#AbstractHeaderPage_sup .highlight"));
-			sb.append(TAG_SCRIPT_END);
+			sb.append(HtmlConst.TAG_SCRIPT_END);
 		}
 		return sb.toString();
 	}
