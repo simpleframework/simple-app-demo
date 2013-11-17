@@ -37,7 +37,7 @@ public class HomePage extends HomeTemplatePage {
 		// if (category != null) {
 		final NewsPageletCreator creator = newsContext.getPageletCreator();
 		final INewsService nService = newsContext.getNewsService();
-		return creator.create(nService.queryContentBeans("集团要闻"));
+		return creator.create(pp, nService.queryContentBeans("集团要闻"));
 		// }
 		// }
 		// return super.toPageletHTML(pp, row, col);
@@ -53,7 +53,7 @@ public class HomePage extends HomeTemplatePage {
 			final Iterator<Element> it = doc.select("img[src]").iterator();
 			Element ele;
 			if (it.hasNext() && (ele = it.next()) != null) {
-				items.append(new ImageItem(ele.attr("src"), newsContext.getUrlsFactory().getNewsUrl(
+				items.append(new ImageItem(ele.attr("src"), newsContext.getUrlsFactory().getNewsUrl(cp,
 						news), news.getTopic()));
 			}
 		}
