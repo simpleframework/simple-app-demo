@@ -21,8 +21,12 @@
     <filter-class>net.simpleframework.demo.DemoFilter</filter-class>
     <!-- 自定义 MVCContext
     <init-param>
-      <param-name>mvc_context</param-name>
+      <param-name>mvc-context</param-name>
       <param-value>com.xxx</param-value>
+    </init-param>
+    <init-param>
+      <param-name>scan-packages</param-name>
+      <param-value>com.xxx;om.yyy</param-value>
     </init-param>
     -->
   </filter>
