@@ -75,16 +75,13 @@ public class MVCTemplateT1 extends SFTemplateT1 {
 	public static class _HeaderPageT1 extends HeaderPageT1 {
 
 		@Override
-		protected void addComponents(final PageParameter pp) {
-			addComponent_logout(pp);
+		protected void onForward(final PageParameter pp) {
+			super.onForward(pp);
 
-			addMenuComponent(pp);
-		}
-
-		@Override
-		protected void addImportCSS(final PageParameter pp) {
-			super.addImportCSS(pp);
 			pp.addImportCSS(DemoApplication.class, "/t1.css");
+
+			addComponent_logout(pp);
+			addMenuComponent(pp);
 		}
 
 		@Override

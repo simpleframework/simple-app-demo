@@ -18,17 +18,12 @@ import net.simpleframework.mvc.template.AbstractTemplatePage;
 public class LoginPage extends AbstractTemplatePage {
 
 	@Override
-	protected void addComponents(final PageParameter pp) {
-		super.addComponents(pp);
-
-		addComponentBean(pp, "LoginPage_login", LoginBean.class).setContainerId("login_" + hashId);
-	}
-
-	@Override
-	protected void addImportCSS(final PageParameter pp) {
-		super.addImportCSS(pp);
+	protected void onForward(final PageParameter pp) {
+		super.onForward(pp);
 
 		pp.addImportCSS(LoginPage.class, "/login.css");
+
+		addComponentBean(pp, "LoginPage_login", LoginBean.class).setContainerId("login_" + hashId);
 	}
 
 	@Override

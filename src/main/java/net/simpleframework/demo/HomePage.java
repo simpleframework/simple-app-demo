@@ -26,8 +26,9 @@ public class HomePage extends HomeTemplatePage {
 	protected INewsWebContext newsContext;
 
 	@Override
-	protected void addImportCSS(final PageParameter pp) {
-		super.addImportCSS(pp);
+	protected void onForward(final PageParameter pp) {
+		super.onForward(pp);
+
 		pp.addImportCSS(HomePage.class, "/home.css");
 	}
 

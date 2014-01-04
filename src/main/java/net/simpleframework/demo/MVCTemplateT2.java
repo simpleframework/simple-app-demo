@@ -16,18 +16,16 @@ public class MVCTemplateT2 extends SFTemplateT2 {
 	}
 
 	public static class _HeaderPageT2 extends HeaderPageT2 {
+
 		@Override
-		protected void addComponents(final PageParameter pp) {
+		protected void onForward(final PageParameter pp) {
+			super.onForward(pp);
+
+			pp.addImportCSS(DemoApplication.class, "/t2.css");
+
 			addComponent_logout(pp);
 
 			MVCTemplateT1.addMenuComponent(pp);
-		}
-
-		@Override
-		protected void addImportCSS(final PageParameter pp) {
-			super.addImportCSS(pp);
-
-			pp.addImportCSS(DemoApplication.class, "/t2.css");
 		}
 
 		@Override
