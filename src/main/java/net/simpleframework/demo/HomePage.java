@@ -11,6 +11,7 @@ import net.simpleframework.module.news.INewsService;
 import net.simpleframework.module.news.News;
 import net.simpleframework.module.news.web.INewsWebContext;
 import net.simpleframework.module.news.web.NewsPageletCreator;
+import net.simpleframework.module.news.web.page.t2.NewsViewPage;
 import net.simpleframework.mvc.PageMapping;
 import net.simpleframework.mvc.PageParameter;
 import net.simpleframework.mvc.component.ComponentParameter;
@@ -54,8 +55,8 @@ public class HomePage extends HomeTemplatePage {
 			final Iterator<Element> it = doc.select("img[src]").iterator();
 			Element ele;
 			if (it.hasNext() && (ele = it.next()) != null) {
-				items.append(new ImageItem(ele.attr("src"), newsContext.getUrlsFactory().getNewsUrl(cp,
-						news), news.getTopic()));
+				items.append(new ImageItem(ele.attr("src"), newsContext.getUrlsFactory().getUrl(cp,
+						NewsViewPage.class, news), news.getTopic()));
 			}
 		}
 		return items;
