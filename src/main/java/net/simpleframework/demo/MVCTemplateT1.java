@@ -88,11 +88,9 @@ public class MVCTemplateT1 extends SFTemplateT1 {
 		protected String toHtml(final PageParameter pp, final Map<String, Object> variables,
 				final String currentVariable) throws IOException {
 			final StringBuilder sb = new StringBuilder();
-			sb.append("<div class='HeaderPageT1'>");
 			sb.append(" <div class='logo' onclick=\"$Actions.loc('/');\"></div>");
 			sb.append(" <div class='re'>").append(toActionsHTML(pp, this)).append("</div>");
 			sb.append(BlockElement.CLEAR);
-			sb.append("</div>");
 			return sb.toString();
 		}
 	}
