@@ -33,7 +33,7 @@ public class MVCTemplateT1 extends SFTemplateT1 {
 	static void addMenuComponent(final PageParameter pp) {
 		final MenuBean menu = (MenuBean) pp
 				.addComponentBean("AbstractHeaderPage_menu", MenuBean.class)
-				.setMenuEvent(EMenuEvent.mouseover).setSelector(".re .acts .link_menuicon");
+				.setMenuEvent(EMenuEvent.mouseenter).setSelector(".re .acts .link_menuicon");
 		final AbstractElement<?>[] eles = new AbstractElement[] {
 				ModuleContextFactory.get(IMyPortalWebContext.class).toMyPortalElement(pp),
 				ModuleContextFactory.get(IFavoriteWebContext.class).toMyFavoriteElement(pp) };
