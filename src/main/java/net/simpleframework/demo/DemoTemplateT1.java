@@ -23,7 +23,7 @@ import net.simpleframework.mvc.component.ui.menu.MenuBean;
 import net.simpleframework.mvc.component.ui.menu.MenuItem;
 import net.simpleframework.organization.web.page.attri.t2.AbstractAttriPage.UserAttriPageT2;
 
-public class MVCTemplateT1 extends SFTemplateT1 {
+public class DemoTemplateT1 extends SFTemplateT1 {
 
 	@Override
 	public Class<? extends AbstractMVCPage> getHeaderPage() {
@@ -48,7 +48,7 @@ public class MVCTemplateT1 extends SFTemplateT1 {
 			}
 		}
 		menu.addItem(MenuItem.sep());
-		menu.addItem(MenuItem.of($m("MVCTemplateT1.0")).setUrl(
+		menu.addItem(MenuItem.of($m("DemoTemplateT1.0")).setUrl(
 				AbstractMVCPage.url(UserAttriPageT2.class)));
 	}
 

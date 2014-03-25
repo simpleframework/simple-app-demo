@@ -29,9 +29,9 @@ public class DemoApplication extends AbstractApplicationContext implements IAppl
 		 * 这个方法的作用是提供模板的Handler,前提是用simple缺省提供的2套模板,如果自己写模板,就没有意义了
 		 */
 		if (AbstractMVCPage.get(pp) instanceof T2TemplatePage) {
-			return singleton(MVCTemplateT2.class);
+			return singleton(DemoTemplateT2.class);
 		}
-		return singleton(MVCTemplateT1.class);
+		return singleton(DemoTemplateT1.class);
 	}
 
 	@Override

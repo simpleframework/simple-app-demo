@@ -8,7 +8,7 @@ import net.simpleframework.mvc.AbstractMVCPage;
 import net.simpleframework.mvc.PageParameter;
 import net.simpleframework.mvc.common.element.BlockElement;
 
-public class MVCTemplateT2 extends SFTemplateT2 {
+public class DemoTemplateT2 extends SFTemplateT2 {
 
 	@Override
 	public Class<? extends AbstractMVCPage> getHeaderPage() {
@@ -25,7 +25,7 @@ public class MVCTemplateT2 extends SFTemplateT2 {
 
 			addComponent_logout(pp);
 
-			MVCTemplateT1.addMenuComponent(pp);
+			DemoTemplateT1.addMenuComponent(pp);
 		}
 
 		@Override
@@ -34,7 +34,7 @@ public class MVCTemplateT2 extends SFTemplateT2 {
 			final StringBuilder sb = new StringBuilder();
 			sb.append("<div class='HeaderPageT2'>");
 			sb.append(" <div class='logo' onclick=\"$Actions.loc('/');\"></div>");
-			sb.append(" <div class='re'>").append(MVCTemplateT1.toActionsHTML(pp, this))
+			sb.append(" <div class='re'>").append(DemoTemplateT1.toActionsHTML(pp, this))
 					.append("</div>");
 			sb.append(BlockElement.CLEAR);
 			sb.append("</div>");
