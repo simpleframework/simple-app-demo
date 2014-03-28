@@ -32,11 +32,7 @@
   </filter>
   <filter-mapping>
     <filter-name>DemoFilter</filter-name>
-    <url-pattern>*.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>DemoFilter</filter-name>
-    <url-pattern>/demo/*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
 
   <listener>
