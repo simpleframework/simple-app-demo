@@ -6,7 +6,7 @@
   <artifactId>simple-app-demo</artifactId>
   <packaging>war</packaging>
   <version>4.0-SNAPSHOT</version>
-  <url>https://simpleframework.net</url>
+  <url>http://simpleframework.net</url>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -159,7 +159,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.21</version>
+      <version>5.1.29</version>
       <scope>runtime</scope>
     </dependency>    
     
