@@ -18,12 +18,12 @@
 
   <filter>
     <filter-name>DemoFilter</filter-name>
-    <filter-class>net.simpleframework.demo.DemoFilter</filter-class>
-    <!-- 自定义 MVCContext
+    <filter-class>net.simpleframework.mvc.MVCFilter</filter-class>
     <init-param>
       <param-name>mvc-context</param-name>
-      <param-value>com.xxx</param-value>
+      <param-value>net.simpleframework.demo.DemoApplication</param-value>
     </init-param>
+    <!-- 
     <init-param>
       <param-name>scan-packages</param-name>
       <param-value>com.xxx;om.yyy</param-value>
