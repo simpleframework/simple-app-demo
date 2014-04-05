@@ -3,10 +3,8 @@ package net.simpleframework.demo;
 import net.simpleframework.app.AbstractApplicationContext;
 import net.simpleframework.app.ApplicationSettings;
 import net.simpleframework.ctx.IApplicationContext;
-import net.simpleframework.mvc.AbstractMVCPage;
-import net.simpleframework.mvc.ITemplateHandler;
-import net.simpleframework.mvc.PageParameter;
-import net.simpleframework.mvc.template.t2.T2TemplatePage;
+import net.simpleframework.mvc.template.t1.ITemplateHandlerT1;
+import net.simpleframework.mvc.template.t2.ITemplateHandlerT2;
 
 import org.hsqldb.Server;
 
@@ -24,14 +22,13 @@ public class DemoApplication extends AbstractApplicationContext implements IAppl
 	}
 
 	@Override
-	public ITemplateHandler getTemplate(final PageParameter pp) {
-		/**
-		 * 这个方法的作用是提供模板的Handler,前提是用simple缺省提供的2套模板,如果自己写模板,就没有意义了
-		 */
-		if (AbstractMVCPage.get(pp) instanceof T2TemplatePage) {
-			return singleton(DemoTemplateT2.class);
-		}
-		return singleton(DemoTemplateT1.class);
+	protected Class<? extends ITemplateHandlerT1> getT1TemplateHandler() {
+		return DemoTemplateT1.class;
+	}
+
+	@Override
+	protected Class<? extends ITemplateHandlerT2> getT2TemplateHandler() {
+		return DemoTemplateT2.class;
 	}
 
 	@Override
