@@ -3,8 +3,6 @@ package net.simpleframework.demo;
 import net.simpleframework.app.AbstractApplicationContext;
 import net.simpleframework.app.ApplicationSettings;
 import net.simpleframework.ctx.IApplicationContext;
-import net.simpleframework.mvc.template.t1.ITemplateHandlerT1;
-import net.simpleframework.mvc.template.t2.ITemplateHandlerT2;
 
 import org.hsqldb.Server;
 
@@ -19,16 +17,6 @@ public class DemoApplication extends AbstractApplicationContext implements IAppl
 		doHsql();
 
 		super.onApplicationInit();
-	}
-
-	@Override
-	protected Class<? extends ITemplateHandlerT1> getT1TemplateHandler() {
-		return DemoTemplateT1.class;
-	}
-
-	@Override
-	protected Class<? extends ITemplateHandlerT2> getT2TemplateHandler() {
-		return DemoTemplateT2.class;
 	}
 
 	@Override
