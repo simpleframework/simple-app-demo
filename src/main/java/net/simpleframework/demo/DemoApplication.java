@@ -1,7 +1,9 @@
 package net.simpleframework.demo;
 
+import net.simpleframework.ado.db.DbManagerFactory;
 import net.simpleframework.app.AbstractApplicationContext;
 import net.simpleframework.ctx.IApplicationContext;
+import net.simpleframework.module.common.ICommonModuleContext;
 
 public class DemoApplication extends AbstractApplicationContext implements IApplicationContext {
 
@@ -16,5 +18,13 @@ public class DemoApplication extends AbstractApplicationContext implements IAppl
 		// return "你插入了两条主键一样的数据，数据库里的主键是不能重复的!";
 		// }
 		return super.getThrowableMessage(th);
+	}
+
+	@Override
+	protected void onBeforeInit() throws Exception {
+		super.onBeforeInit();
+
+		final DbManagerFactory dbFactory = (DbManagerFactory) getADOManagerFactory();
+		dbFactory.regist(ICommonModuleContext.SF_ATTACHMENT, ICommonModuleContext.SF_ATTACHMENT_LOB);
 	}
 }
