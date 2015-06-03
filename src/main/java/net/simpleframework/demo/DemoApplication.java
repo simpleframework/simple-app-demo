@@ -21,8 +21,8 @@ public class DemoApplication extends AbstractApplicationContext implements IAppl
 	}
 
 	@Override
-	protected void onBeforeInit() throws Exception {
-		super.onBeforeInit();
+	protected void onAfterInit() throws Exception {
+		super.onAfterInit();
 
 		final DbManagerFactory dbFactory = (DbManagerFactory) getADOManagerFactory();
 		dbFactory.regist(ICommonModuleContext.SF_ATTACHMENT, ICommonModuleContext.SF_ATTACHMENT_LOB);
