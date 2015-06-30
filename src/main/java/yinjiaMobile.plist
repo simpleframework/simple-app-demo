@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://fz-api.simpleframwork.net/dowload/yinjia/yinjiaMobile.ipa</string>
+					<string>http://fz-api.simpleframework.net/download/yinjia/yinjiaMobile.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://fz-api.simpleframwork.net/dowload/yinjia/icon.png</string>
+					<string>http://fz-api.simpleframework.net/download/yinjia/icon.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://fz-api.simpleframwork.net/dowload/yinjia/icon.png</string>
+					<string>http://fz-api.simpleframework.net/download/yinjia/icon.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
