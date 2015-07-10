@@ -18,7 +18,7 @@ import net.simpleframework.mvc.template.AbstractTemplatePage;
 public class LoginPage extends AbstractTemplatePage {
 
 	@Override
-	protected void onForward(final PageParameter pp) {
+	protected void onForward(final PageParameter pp) throws Exception {
 		super.onForward(pp);
 
 		pp.addImportCSS(LoginPage.class, "/login.css");

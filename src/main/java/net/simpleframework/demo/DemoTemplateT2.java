@@ -18,7 +18,7 @@ public class DemoTemplateT2 extends SFTemplateT2 {
 	public static class _HeaderPageT2 extends HeaderPageT2 {
 
 		@Override
-		protected void onForward(final PageParameter pp) {
+		protected void onForward(final PageParameter pp) throws Exception {
 			super.onForward(pp);
 
 			pp.addImportCSS(DemoApplication.class, "/t2.css");
