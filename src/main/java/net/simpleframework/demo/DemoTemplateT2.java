@@ -7,6 +7,7 @@ import net.simpleframework.app.template.SFTemplateT2;
 import net.simpleframework.mvc.AbstractMVCPage;
 import net.simpleframework.mvc.PageParameter;
 import net.simpleframework.mvc.common.element.BlockElement;
+import net.simpleframework.mvc.common.element.JS;
 
 public class DemoTemplateT2 extends SFTemplateT2 {
 
@@ -33,7 +34,7 @@ public class DemoTemplateT2 extends SFTemplateT2 {
 				final String currentVariable) throws IOException {
 			final StringBuilder sb = new StringBuilder();
 			sb.append("<div class='HeaderPageT2'>");
-			sb.append(" <div class='logo' onclick=\"$Actions.loc('/');\"></div>");
+			sb.append(" <div class='logo' onclick=\"").append(JS.loc("/")).append("\"></div>");
 			sb.append(" <div class='re'>").append(DemoTemplateT1.toActionsHTML(pp, this))
 					.append("</div>");
 			sb.append(BlockElement.CLEAR);
