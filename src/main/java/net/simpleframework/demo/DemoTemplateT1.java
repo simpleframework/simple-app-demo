@@ -61,7 +61,7 @@ public class DemoTemplateT1 extends SFTemplateT1 {
 			sb.append("<div class='acts'>");
 			sb.append(ModuleContextFactory.get(IMessageWebContext.class).toMyMessageElement(pp)
 					.setId("AbstractHeaderPage_sup"));
-			sb.append(SpanElement.SEP).append(page.str_User(pp)).append(SpanElement.SEP)
+			sb.append(SpanElement.SEP()).append(page.str_User(pp)).append(SpanElement.SEP())
 					.append(page.str_Logout(pp));
 			sb.append("</div>");
 			sb.append("<div class='user'>").append(page.str_Photo(pp)).append("</div>");
