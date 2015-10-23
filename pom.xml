@@ -156,8 +156,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.3</version>
         <configuration>
-          <packagingExcludes>$resource/**</packagingExcludes>
-          <packagingExcludes>$temp/**</packagingExcludes>
+          <packagingExcludes>$*/**</packagingExcludes>
         </configuration>
       </plugin>
 
