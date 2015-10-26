@@ -118,7 +118,7 @@
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-developer-web</artifactId>
-      <version>4.0-SNAPSHOT</version>
+      <version>${simple.module.developer.web}</version>
     </dependency>
 
     <dependency>
