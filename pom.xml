@@ -143,15 +143,6 @@
   <build>
     <finalName>simple-demo</finalName>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.3</version>
-        <configuration>
-          <packagingExcludes>$*/**</packagingExcludes>
-        </configuration>
-      </plugin>
-
       <!-- jetty服务插件 运行指令 jetty:run 或执行run.bat -->
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
