@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://demo.mobile.sansoft.com.cn/download/icon.png</string>
+					<string>http://joa4.simpleframework.net/download/icon.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://demo.mobile.sansoft.com.cn/download/icon.png</string>
+					<string>http://joa4.simpleframework.net/download/icon.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
