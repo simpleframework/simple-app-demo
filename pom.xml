@@ -34,7 +34,6 @@
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-app-template</artifactId>
-      <version>${simple.app.template}</version>
     </dependency>
 
     <dependency>
