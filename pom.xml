@@ -40,79 +40,66 @@
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-log-web</artifactId>
-      <version>${simple.module.log.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-msg-web</artifactId>
-      <version>${simple.module.msg.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-myportal-web</artifactId>
-      <version>${simple.module.myportal.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-news-web</artifactId>
-      <version>${simple.module.news.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-favorite-web</artifactId>
-      <version>${simple.module.favorite.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-vote-web</artifactId>
-      <version>${simple.module.vote.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-bbs-web</artifactId>
-      <version>${simple.module.bbs.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-dict-web</artifactId>
-      <version>${simple.module.dict.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-druid</artifactId>
-      <version>${simple.module.druid}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-pdf-web</artifactId>
-      <version>${simple.module.pdf.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-tag-web</artifactId>
-      <version>${simple.module.tag.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-workflow-web</artifactId>
-      <version>${simple.module.workflow.web}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-settings-web</artifactId>
-      <version>${simple.module.settings.web}</version>
     </dependency>
 
     <dependency>
