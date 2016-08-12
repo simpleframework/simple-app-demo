@@ -12,7 +12,7 @@ import net.simpleframework.mvc.common.element.JS;
 public class DemoTemplateT2 extends SFTemplateT2 {
 
 	@Override
-	public Class<? extends AbstractMVCPage> getHeaderPage() {
+	public Class<? extends AbstractMVCPage> getHeaderPage(final AbstractMVCPage templatePage) {
 		return _HeaderPageT2.class;
 	}
 

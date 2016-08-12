@@ -27,7 +27,7 @@ import net.simpleframework.organization.web.page.attri.t2.AbstractAttriPage.User
 public class DemoTemplateT1 extends SFTemplateT1 {
 
 	@Override
-	public Class<? extends AbstractMVCPage> getHeaderPage() {
+	public Class<? extends AbstractMVCPage> getHeaderPage(final AbstractMVCPage templatePage) {
 		return _HeaderPageT1.class;
 	}
 
