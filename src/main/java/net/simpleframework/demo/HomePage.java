@@ -51,8 +51,8 @@ public class HomePage extends HomeTemplatePage implements INewsContextAware {
 			final Iterator<Element> it = doc.select("img[src]").iterator();
 			Element ele;
 			if (it.hasNext() && (ele = it.next()) != null) {
-				items.append(new ImageItem(ele.attr("src"), uFactory.getUrl(cp, NewsViewTPage.class,
-						news), news.getTopic()));
+				items.append(new ImageItem(ele.attr("src"),
+						uFactory.getUrl(cp, NewsViewTPage.class, news), news.getTopic()));
 			}
 		}
 		return items;

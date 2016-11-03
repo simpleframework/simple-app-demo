@@ -49,8 +49,8 @@ public class DemoTemplateT1 extends SFTemplateT1 {
 			}
 		}
 		menu.addItem(MenuItem.sep());
-		menu.addItem(MenuItem.of($m("DemoTemplateT1.0")).setUrl(
-				AbstractMVCPage.url(UserAttriPageT2.class)));
+		menu.addItem(
+				MenuItem.of($m("DemoTemplateT1.0")).setUrl(AbstractMVCPage.url(UserAttriPageT2.class)));
 	}
 
 	static String toActionsHTML(final PageParameter pp, final AbstractHeaderPage page) {
